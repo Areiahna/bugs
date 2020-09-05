@@ -1,0 +1,80 @@
+<h1>{{request.user}}</h1>
+<button><a href="addTicket/">Submit a new Ticket</a></button>
+<button><a href="logout/">Logout</a></button>
+<hr>
+
+<h1>Tickets:</h1>
+<ul>
+
+    <h1> NEW Tickets</h1>
+    {% for ticket in newTickets%}
+    {% for user in users %}
+    <li>
+
+        <h2><a href="ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+        <h3><a href="addTicket/{{ticket.id}}/edit/">Edit Ticket</a></h3>
+
+
+    <li>Description: {{ticket.description}}</li>
+    <li>Status: {{ticket.status}}</li>
+    <li>Filed by: <a href="userDetail/{{user.id}}/">{{user.username}}</a></li>
+
+
+    </li>
+
+    {% endfor %}
+    {% endfor %}
+
+    <hr>
+    <br>
+    <h1> INPROGRESS Tickets</h1>
+    {% for ticket in progressTickets%}
+    {% for user in users %}
+
+    <li>
+        <h2><a href="ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+        <h3><a href="addTicket/{{ticket.id}}/edit/">Edit Ticket</a></h3>
+
+    <li>Description: {{ticket.description}}</li>
+    <li>Status: {{ticket.status}}</li>
+    <li>Filed by: <a href="userDetail/{{user.id}}/">{{user.username}}</a></li>
+    </li>
+    {% endfor %}
+    {% endfor %}
+
+    <hr>
+    <br>
+    <h1> DONE Tickets</h1>
+    {% for ticket in doneTickets%}
+    {% for user in users %}
+
+    <li>
+        <h2><a href="ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+        <h3><a href="addTicket/{{ticket.id}}/edit/">Edit Ticket</a></h3>
+
+    <li>Description: {{ticket.description}}</li>
+    <li>Status: {{ticket.status}}</li>
+    <li>Filed by:<a href="userDetail/{{user.id}}/">{{user.username}}</a></li>
+    </li>
+    {% endfor %}
+    {% endfor %}
+
+    <hr>
+    <br>
+    <h1> INVALID Tickets</h1>
+    {% for ticket in invalidTickets%}
+    {% for user in users %}
+
+    <li>
+        <h2><a href="ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+        <h3><a href="addTicket/{{ticket.id}}/edit/">Edit Ticket</a></h3>
+
+    <li>Description: {{ticket.description}}</li>
+    <li>Status: {{ticket.status}}</li>
+    <li>Filed by:<a href="userDetail/{{user.id}}/">{{user.username}}</a></li>
+    </li>
+    {% endfor %}
+    {% endfor %}
+
+    </h2>
+</ul>

@@ -1,0 +1,55 @@
+<H1>{{user}}</H1>
+<hr>
+
+<h2>Filed Tickets</h2>
+{% for ticket in tickets %}
+
+
+<h2><a href="/ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+<h3><a href="/addTicket/{{ticket.id}}/edit">Edit Ticket</a></h3>
+
+
+<li>Description: {{ticket.description}}</li>
+<li>Status: {{ticket.status}}</li>
+<li>Filed by: <a href="/userDetail/{{user.id}}">{{user}}</a></li>
+
+
+
+{% endfor %}
+
+<hr>
+<h2>In Progress Tickets</h2>
+{% for ticket in progress%}
+
+
+
+<h2><a href="/ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+<h3><a href="/addTicket/{{ticket.id}}/edit">Edit Ticket</a></h3>
+
+
+<li>Description: {{ticket.description}}</li>
+<li>Status: {{ticket.status}}</li>
+<li>Filed by: <a href="/userDetail/{{user.id}}">{{user}}</a></li>
+
+
+
+{% endfor %}
+
+<hr>
+
+<h2>Completed Tickets</h2>
+{% for ticket in completed_tickets%}
+
+
+
+<h2><a href="/ticketDetail/{{ticket.id}}">{{ticket.title}} - {{ticket.post_date}}</a></h2>
+<h3><a href="/addTicket/{{ticket.id}}/edit">Edit Ticket</a></h3>
+
+
+<li>Description: {{ticket.description}}</li>
+<li>Status: {{ticket.status}}</li>
+<li>Filed by: <a href="/userDetail/{{user.id}}">{{user}}</a></li>
+
+
+
+{% endfor %}
